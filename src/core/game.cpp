@@ -16,13 +16,12 @@ void Snake()
     Player player;
 
     // Variables
-    food.__x = 5 * window.__grid_size;
-    food.__y = 6 * window.__grid_size;
-    food.__radius = window.__grid_size / 2;
-    player.__x = window.__width - 35;
-    player.__y = window.__height / 2 - 60;
-    player.__width = 25;
-    player.__height = 120;
+    food.__grid_size = window.__grid_size;
+    food.__grid_count = window.__grid_count;
+    food.__position = food.RandomPosition();
+    player.__grid_size = window.__grid_size;
+    player.__grid_count = window.__grid_count;
+    player.__body = {Vector2{6,9}, Vector2{5,9}, Vector2{4,9}};
     player.__speed = 6;
 
     // Window Open
@@ -36,14 +35,14 @@ void Snake()
 
         // --- Updating ---
         food.Update();
-        //player.Update();
+        player.Update();
 
         // --- Event ---
 
         // --- Drawing ---
         window.Draw();
         food.Draw();
-        //player.Draw();
+        player.Draw();
 
         // End
         EndDrawing();        

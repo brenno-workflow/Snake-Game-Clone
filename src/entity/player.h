@@ -1,6 +1,9 @@
 #pragma once
 
 #include <raylib.h>
+#include <deque>
+
+using namespace std;
 
 // Class
 class Player{
@@ -9,8 +12,8 @@ class Player{
     public:
 
         // Variables
-        float __x, __y;
-        float __width, __height;
+        deque<Vector2> __body;
+        int __grid_size, __grid_count;
         int __speed;
         Color __color = {43, 51, 24, 255};
 
